@@ -9,7 +9,14 @@ sudo sh -c 'echo "deb [signed-by=/usr/share/keyrings/deb.sury.org-php.gpg] https
 sudo apt-get update
 
 # Installation de PHP 8.4
-sudo apt install -y php8.4-cli php8.4-fpm php8.4-xml
+sudo apt install -y \
+  php8.4-cli \
+  php8.4-fpm \
+  php8.4-xml \
+  php-json \
+  php8.4-mbstring \
+  php8.4-pcov \
+  php8.4-xdebug
 
 # Installation de Composer
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
