@@ -27,12 +27,13 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "src/"
+            "Infrastructure\\": "infrastructure",
+            "Domain\\": "domain"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "App\\Tests\\": "tests/"
+            "Tests\\": "tests/"
         }
     },
     "replace": {
