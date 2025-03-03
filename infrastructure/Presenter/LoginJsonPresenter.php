@@ -6,7 +6,7 @@ use Domain\User\UseCase\Login\OutputInterface;
 use Domain\User\UseCase\Login\Response;
 use Infrastructure\ViewModel\Json;
 
-class JsonPresenter implements OutputInterface
+class LoginJsonPresenter implements OutputInterface
 {
   public Json $viewModel;
 

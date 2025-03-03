@@ -10,6 +10,7 @@ class UseCase
     public function __construct(
         private UserRepositoryInterface $userRepository
     ) {}
+
     public function __invoke(Request $request, OutputInterface $output): void
     {
         $response = new Response();

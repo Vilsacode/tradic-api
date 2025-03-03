@@ -24,6 +24,8 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+    Domain\Card\Gateway\CardRepositoryInterface: '@Infrastructure\Repository\InMemory\CardRepository'
+
     Domain\User\Gateways\UserRepositoryInterface: '@Infrastructure\Repository\InMemory\UserRepository'
     Domain\User\Gateways\JWTInterface: '@Infrastructure\Service\JWT'
 
@@ -35,6 +37,9 @@ services:
 
 when@test:
     services:
+        Infrastructure\Repository\InMemory\CardRepository:
+            public: true
+
         Infrastructure\Service\JWT:
             public: true
             arguments:

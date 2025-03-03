@@ -3,15 +3,24 @@
 namespace Domain\Card\UseCase\GetOneCard;
 
 use Domain\Card\Entity\Card;
+use Domain\Card\Gateway\CardRepositoryInterface;
 
 class UseCase
 {
+    public function __construct(
+        private CardRepositoryInterface $repository
+    ) {}
+
     public function __invoke(Request $request, OutputInterface $output): void
     {
         $response = new Response();
-        $card = new Card('test');
+        $card = $this->repository->findByUUID($request->uuid);
 
-        $response->card = $card;
+        if ($card) {
+            $response->card = $card;
+        } else {
+            $response->error = 'Card not found';
+        }
 
         $output->present($response);
     }

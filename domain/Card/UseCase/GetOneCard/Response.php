@@ -12,4 +12,6 @@ class Response
       $this->card = $card;
     }
   }
+
+  public string $error;
 }
