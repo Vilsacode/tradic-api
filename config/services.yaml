@@ -36,10 +36,16 @@ services:
             $expirationTime: '%jwt.expirationTime%'
             $algo: '%jwt.algo%'
 
+    Infrastructure\Repository\InMemory\CardRepository:
+        arguments:
+            - '%kernel.project_dir%'
+
 when@test:
     services:
         Infrastructure\Repository\InMemory\CardRepository:
             public: true
+            arguments:
+                - '%kernel.project_dir%'
 
         Infrastructure\Service\JWT:
             public: true

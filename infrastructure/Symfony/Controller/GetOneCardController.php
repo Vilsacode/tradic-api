@@ -18,15 +18,11 @@ class GetOneCardController extends AbstractController
   public function __construct(
     private JsonView $view,
     private SingleCardJsonPresenter $presenter,
-    private UseCaseInterface $useCase,
-    private CardRepositoryInterface $repository
+    private UseCaseInterface $useCase
   ) {}
 
   public function __invoke(Request $request, string $uuid): Response
   {
-
-    $this->repository->save(new Card('huiop'));
-
     $request = new \Domain\Card\UseCase\GetOneCard\Request(
       $uuid
     );
