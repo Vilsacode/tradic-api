@@ -2,7 +2,7 @@
 
 namespace Infrastructure\Symfony\Controller;
 
-use Domain\User\Gateways\UserRepositoryInterface;
+use Domain\User\Gateway\UserRepositoryInterface;
 use Domain\User\UseCase\Login\UseCase;
 use Infrastructure\Presenter\LoginJsonPresenter;
 use Infrastructure\View\JsonView;

@@ -4,8 +4,8 @@ namespace Domain\User\Service;
 
 use Domain\User\Entity\User;
 use Domain\User\Exception\JWTValidateException;
-use Domain\User\Gateways\JWTInterface;
-use Domain\User\Gateways\UserRepositoryInterface;
+use Domain\User\Gateway\JWTInterface;
+use Domain\User\Gateway\UserRepositoryInterface;
 
 class Factory
 {

@@ -3,7 +3,7 @@
 namespace Infrastructure\Service;
 
 use Domain\User\Entity\User;
-use Domain\User\Gateways\JWTInterface;
+use Domain\User\Gateway\JWTInterface;
 use Firebase\JWT\Key;
 
 class JWT implements JWTInterface

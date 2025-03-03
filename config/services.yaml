@@ -26,8 +26,8 @@ services:
     # please note that last definitions always *replace* previous ones
     Domain\Card\Gateway\CardRepositoryInterface: '@Infrastructure\Repository\InMemory\CardRepository'
 
-    Domain\User\Gateways\UserRepositoryInterface: '@Infrastructure\Repository\InMemory\UserRepository'
-    Domain\User\Gateways\JWTInterface: '@Infrastructure\Service\JWT'
+    Domain\User\Gateway\UserRepositoryInterface: '@Infrastructure\Repository\InMemory\UserRepository'
+    Domain\User\Gateway\JWTInterface: '@Infrastructure\Service\JWT'
 
     Infrastructure\Service\JWT:
         arguments:
