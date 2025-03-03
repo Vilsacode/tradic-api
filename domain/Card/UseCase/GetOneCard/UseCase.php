@@ -2,7 +2,6 @@
 
 namespace Domain\Card\UseCase\GetOneCard;
 
-use Domain\Card\Entity\Card;
 use Domain\Card\Gateway\CardRepositoryInterface;
 
 class UseCase implements UseCaseInterface
