@@ -25,6 +25,7 @@ services:
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
     Domain\Card\Gateway\CardRepositoryInterface: '@Infrastructure\Repository\InMemory\CardRepository'
+    Domain\Card\UserCase\GetOneCard\UseCaseInterface: '@Domain\Card\UserCase\GetOneCard\UseCase'
 
     Domain\User\Gateway\UserRepositoryInterface: '@Infrastructure\Repository\InMemory\UserRepository'
     Domain\User\Gateway\JWTInterface: '@Infrastructure\Service\JWT'

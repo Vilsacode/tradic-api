@@ -5,7 +5,7 @@ namespace Domain\Card\UseCase\GetOneCard;
 use Domain\Card\Entity\Card;
 use Domain\Card\Gateway\CardRepositoryInterface;
 
-class UseCase
+class UseCase implements UseCaseInterface
 {
     public function __construct(
         private CardRepositoryInterface $repository

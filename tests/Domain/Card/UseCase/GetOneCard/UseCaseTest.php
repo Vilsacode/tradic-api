@@ -49,4 +49,16 @@ class UseCaseTest extends KernelTestCase implements OutputInterface
 
     $this->assertInstanceOf(Card::class, $this->response->card);
   }
+
+  public function testGetOneCardNotFound(): void
+  {
+
+    $request = new Request('1v1er3z5f4');
+    $useCase = new UseCase($this->cardRepository);
+
+    $useCase($request, $this);
+
+    $this->assertNull($this->response->card);
+    $this->assertEquals('Card not found', $this->response->error);
+  }
 }

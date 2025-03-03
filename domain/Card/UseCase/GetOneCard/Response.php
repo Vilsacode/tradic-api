@@ -6,12 +6,7 @@ use Domain\Card\Entity\Card;
 
 class Response
 {
-  public Card $card {
-    get => $this->card;
-    set (Card $card) {
-      $this->card = $card;
-    }
-  }
+  public ?Card $card = null;
 
-  public string $error;
+  public ?string $error = null;
 }
