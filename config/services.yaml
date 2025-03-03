@@ -4,6 +4,9 @@
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices.html#use-parameters-for-application-configuration
 parameters:
+    jwt.key: "%env(JWT_KEY)%"
+    jwt.expirationTime: "%env(JWT_EXPIRATION_TIME)%"
+    jwt.algo: "%env(JWT_ALGO)%"
 
 services:
     # default configuration for services in *this* file
@@ -18,11 +21,23 @@ services:
 
     Infrastructure\:
         resource: '../infrastructure/'
-        exclude:
-            - '../infrastructure/DependencyInjection/'
-            - '../infrastructure/Entity/'
-            - '../infrastructure/Kernel.php'
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
-    Domain\User\Repository\UserRepositoryInterface: '@Infrastructure\Repository\InMemory\UserRepository'
+    Domain\User\Gateways\UserRepositoryInterface: '@Infrastructure\Repository\InMemory\UserRepository'
+    Domain\User\Gateways\JWTInterface: '@Infrastructure\Service\JWT'
+
+    Infrastructure\Service\JWT:
+        arguments:
+            $key: '%jwt.key%'
+            $expirationTime: '%jwt.expirationTime%'
+            $algo: '%jwt.algo%'
+
+when@test:
+    services:
+        Infrastructure\Service\JWT:
+            public: true
+            arguments:
+                $key: '%jwt.key%'
+                $expirationTime: '%jwt.expirationTime%'
+                $algo: '%jwt.algo%'

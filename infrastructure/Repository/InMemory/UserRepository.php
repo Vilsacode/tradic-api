@@ -2,7 +2,7 @@
 
 namespace Infrastructure\Repository\InMemory;
 
-use Domain\User\Repository\UserRepositoryInterface;
+use Domain\User\Gateways\UserRepositoryInterface;
 use Domain\User\Entity\User;
 use Domain\User\Service\Password;
 

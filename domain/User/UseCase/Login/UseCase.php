@@ -2,7 +2,7 @@
 
 namespace Domain\User\UseCase\Login;
 
-use Domain\User\Repository\UserRepositoryInterface;
+use Domain\User\Gateways\UserRepositoryInterface;
 use Domain\User\Service\Password;
 
 class UseCase

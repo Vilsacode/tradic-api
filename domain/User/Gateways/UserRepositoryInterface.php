@@ -1,6 +1,6 @@
 <?php
 
-namespace Domain\User\Repository;
+namespace Domain\User\Gateways;
 
 use Domain\User\Entity\User;
 
