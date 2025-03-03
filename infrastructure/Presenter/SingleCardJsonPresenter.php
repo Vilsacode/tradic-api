@@ -14,7 +14,7 @@ class SingleCardJsonPresenter implements OutputInterface
   {
     $statusCode = 200;
 
-    if ($response->error !== '') {
+    if ($response->error !== null) {
       $statusCode = 422;
     }
 
