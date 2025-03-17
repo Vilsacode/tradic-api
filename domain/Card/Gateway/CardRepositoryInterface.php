@@ -19,4 +19,10 @@ interface CardRepositoryInterface
    * @return Card
    */
   public function findByUUID(string $uuid): ?Card;
+
+  /**
+   * Find Cards
+   * @return Card[]
+   */
+  public function findAll(): array;
 }

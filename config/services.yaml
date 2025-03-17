@@ -26,6 +26,7 @@ services:
     # please note that last definitions always *replace* previous ones
     Domain\Card\Gateway\CardRepositoryInterface: '@Infrastructure\Repository\InMemory\CardRepository'
     Domain\Card\UserCase\GetOneCard\UseCaseInterface: '@Domain\Card\UserCase\GetOneCard\UseCase'
+    Domain\Card\UserCase\GetCards\UseCaseInterface: '@Domain\Card\UserCase\GetCards\UseCase'
 
     Domain\User\Gateway\UserRepositoryInterface: '@Infrastructure\Repository\InMemory\UserRepository'
     Domain\User\Gateway\JWTInterface: '@Infrastructure\Service\JWT'
@@ -42,10 +43,11 @@ services:
 
 when@test:
     services:
-        Infrastructure\Repository\InMemory\CardRepository:
-            public: true
-            arguments:
-                - '%kernel.project_dir%'
+
+        Tests\Fake\:
+            resource: '../tests/Fake/'
+
+        Domain\Card\Gateway\CardRepositoryInterface: '@Tests\Fake\CardRepository'
 
         Infrastructure\Service\JWT:
             public: true

@@ -38,10 +38,6 @@ class UseCaseTest extends KernelTestCase implements OutputInterface
   {
     $uuid = '1564vree';
 
-    $card = new Card($uuid);
-
-    $this->cardRepository->save($card);
-
     $request = new Request($uuid);
     $useCase = new UseCase($this->cardRepository);
 

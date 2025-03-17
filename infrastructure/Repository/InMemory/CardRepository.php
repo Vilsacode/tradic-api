@@ -38,4 +38,9 @@ class CardRepository implements CardRepositoryInterface
 
     return null;
   }
+
+  public function findAll(): array
+  {
+    return $this->cards;
+  }
 }
